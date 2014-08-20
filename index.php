@@ -221,9 +221,9 @@
                     <label class="desc" for="plan">Desired Plan</label><br />
                     <select class="full" id="plan" name="plan">
                       <option value="none">-- Select one --</option>
-                      <option value="lite">Lite</option>
-                      <option value="max">Max</option>
-                      <option value="complete">Complete</option>
+                      <option value="lite">Lite - $20/month</option>
+                      <option value="max">Max - $35/month</option>
+                      <option value="complete">Complete - $45/month</option>
                       <option value="none">Not required</option>
                     </select>
                   </p>
@@ -242,11 +242,11 @@
                     <label class="desc" for="internet">NBN Internet Plan</label><br />
                     <select class="full" id="internet" name="internet">
                        <option value="none">-- Select one --</option>
-                       <option value="25/1Mbps">25/1Mbps - $100</option>
-                       <option value="25/5Mbps">25/5Mbps - $110</option>
-                       <option value="25/10Mbps">25/10Mbps - $120</option>
-                       <option value="50/20Mbps">50/20Mbps - $130</option>
-                       <option value="100/40Mbps">100/40Mbps - $140</option>
+                       <option value="25/1Mbps">25/1Mbps - $100/month</option>
+                       <option value="25/5Mbps">25/5Mbps - $110/month</option>
+                       <option value="25/10Mbps">25/10Mbps - $120/month</option>
+                       <option value="50/20Mbps">50/20Mbps - $130/month</option>
+                       <option value="100/40Mbps">100/40Mbps - $140/month</option>
                        <option value="none">Not required</option>
                     </select>
                   </p>
