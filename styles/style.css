@@ -56,6 +56,7 @@ body {
 
 .main-heading {
    margin-top: 0px;
+   text-align: center;
 }
 
 .content {
@@ -81,7 +82,8 @@ padding: 20px 70px;
 }
 
 .form-wrap {
-   display: inline-block;
+   display: block;
+   margin: auto;
 }
 
 .quote {

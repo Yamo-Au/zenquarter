@@ -250,9 +250,10 @@
                        <option value="none">Not required</option>
                     </select>
                   </p>
-                </div>
-                     <input class="button" type="submit" name="submit" value="Get Quote" />
+                  <input class="button" type="submit" name="submit" value="Get Quote" />
                      <input class="button" type="reset" name="reset" value="Start over" onclick="$('.quote').hide(1000);" />
+                </div>
+                     
             </form>
             </div>
             
