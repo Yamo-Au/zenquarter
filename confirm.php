@@ -8,12 +8,15 @@
    $handsetInput = $_POST['handset'];
    $internetInput = $_POST['internet'];
    
-   # TODO - grab user input
    $firstName = $_POST['first'];
    $lastName = $_POST['last'];
    $email = $_POST['email'];
    $street1 = $_POST['street1'];
    $street2 = $_POST['street2'];
+   $city = $_POST['city'];
+   $state = $_POST['state'];
+   $postcode = $_POST['postcode'];
+   $phone = $_POST['phone'];
    
    $c504 = [
       'id'=>'504',
@@ -67,8 +70,19 @@
    <div class="content">
       <h1>Review your details</h1>
       <p>Thank you, <?php echo $firstName; ?>, please review your information and click 'continue'.</p>
+      <div class="customer-details">
+         <table>
+            <tr><td>Name:</td><td><?php echo $firstName.' '.$lastName ?></td></tr>
+            <tr><td>Email:</td><td><?php echo $email ?></td></tr>
+            <tr><td>Street address line 1:</td><td><?php echo $street1 ?></td></tr>
+            <tr><td>Street address line 2:</td><td><?php echo $street2 ?></td></tr>
+            <tr><td>City:</td><td><?php echo $city ?></td></tr>
+            <tr><td>State:</td><td><?php echo $state ?></td></tr>
+            <tr><td>Postcode:</td><td><?php echo $postcode ?></td></tr>
+            <tr><td>Phone number:</td><td><?php echo $phone ?></td></tr>
+         </table>
+      </div>
       <div id="quote">
-      
       <?php
       
          $handsetCost = 0;
@@ -180,8 +194,8 @@
          echo '<script>$(".quote").show(1000);</script>';
          
       ?>
-      
       </div>
+      
    </div>
 </div>
 </body>

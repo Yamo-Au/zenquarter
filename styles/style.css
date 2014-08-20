@@ -228,3 +228,19 @@ form input, select {
    padding: 10px 20px;
    font-size: 10px;
 }
+
+.customer-details {
+   margin: auto;
+}
+
+.tnc {
+   background-color: #fff;
+   padding: 20px;
+   overflow: auto;
+   height: 365px;
+}
+
+.tnc h2 {
+   font-size: 16px;
+   text-align: left;
+}

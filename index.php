@@ -41,6 +41,7 @@
                       <option value="sa">SA</option>
                       <option value="tas">TAS</option>
                     </select>
+                    <input type="text" class="half required" name="postcode" value="Postcode"/>
                   </p>
                   <p>
                     <label class="desc">Phone</label><br />
