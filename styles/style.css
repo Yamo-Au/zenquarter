@@ -86,7 +86,7 @@ padding: 20px 70px;
    margin: auto;
 }
 
-.quote {
+#quote {
    display: block;
    vertical-align: top;
    text-align: justify;
@@ -138,7 +138,7 @@ h3 {
    background-image: linear-gradient(to bottom, #FA8A00 36%, #FF9D00 100%);
 }
 
-.quote-box, .quote-button {
+.quote-box {
    display: inline-block;
    *display: inline;
    margin: 10px;
@@ -161,7 +161,8 @@ h3 {
 }
 
 .quote-button {
-   
+   display: block;
+   margin: auto;
 }
 
 .quote-button:hover, .button:hover {
@@ -204,20 +205,26 @@ tr, td {
         font-size: 16px;
       }
       
-      form input {
-         padding: 10px 5px;
-      }
-      
-      form input, select {
-        font-size: 18px;
-        margin: 2px 2px 10px;
-        padding: 5px 2px;
-      }
-      
-      .full {
-        width: 92%;
-      }
-      
-      .half {
-        width: 45%;
-      }
+form input {
+   padding: 10px 5px;
+   
+}
+
+form input, select {
+  font-size: 18px;
+  margin: 2px 2px 10px;
+  padding: 5px 2px;
+}
+
+.full {
+  width: 92%;
+}
+
+.half {
+  width: 45%;
+}
+
+.footer {
+   padding: 10px 20px;
+   font-size: 10px;
+}
