@@ -1,4 +1,5 @@
 <?php
+   
    $NBN_MONTHLY_FEE = 100;
    $NBN_ACTIVATION_FEE = 150;
    
@@ -17,6 +18,17 @@
    $state = $_POST['state'];
    $postcode = $_POST['postcode'];
    $phone = $_POST['phone'];
+   
+   # Build string to be emailed to sales
+   $message = 'Dear sales,\nA customer has expressed interest in our product. Please find details below.\n';
+   $message .= 'Name:\t'.$firstName.' '.$lastName.'\n';
+   $message .= 'Email:\t'.$email.'\n';
+   $message .= 'Address:\t'.$street1.' '.$street2.' '.$city.' '.$state.' '.$postcode.'\n';
+   $message .= 'Phone:\t'.$phone;
+   
+   # Email to sales
+   $to = 'test@test.com.au';                             # change as desired
+   mail($to, 'Customer interest - '.$email, $message);
    
    $c504 = [
       'id'=>'504',
@@ -61,12 +73,7 @@
 </head>
 <body>
 <div class="wrapper">
-   <div class="header">
-      <img class="logo" alt="Yamo logo" src="images/logo.png" />
-   </div>
-   <div class="banner-area">
-      <img class="banner" src="images/banner.png" />
-   </div>
+   <?php include_once('includes/top.php'); ?>
    <div class="content">
       <h1>Review your details</h1>
       <p>Thank you, <?php echo $firstName; ?>, please review your information and click 'continue'.</p>
@@ -190,13 +197,19 @@
          echo '</div> ';
 
          echo '<span class="stretch"></span>';
-         echo '<button class="quote-button">Continue &#187;</button> ';
+         echo '<button class="quote-button" id="continue">Continue &#187;</button> ';
          echo '<script>$(".quote").show(1000);</script>';
          
       ?>
       </div>
+      <script type="text/javascript">
+         $('#continue').click(function() {
+            location.href = 'terms.php';
+         });
+      </script>
       
    </div>
+   <?php include_once('includes/footer.php'); ?>
 </div>
 </body>
 </html>

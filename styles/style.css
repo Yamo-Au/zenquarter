@@ -9,6 +9,7 @@ body {
    background-color: #eee;
    box-shadow: 1px 1px 8px #888888;
    border-radius: 20px;
+   
 }
 
 .contact-area {
@@ -60,16 +61,15 @@ body {
 }
 
 .content {
-background: rgb(255,255,255); /* Old browsers */
-background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(178,178,178,1) 99%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(99%,rgba(178,178,178,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(178,178,178,1) 99%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(178,178,178,1) 99%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(178,178,178,1) 99%); /* IE10+ */
-background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(178,178,178,1) 99%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#b2b2b2',GradientType=0 ); /* IE6-9 */
-
-padding: 20px 70px;
+   background: rgb(255,255,255); /* Old browsers */
+   background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(178,178,178,1) 99%); /* FF3.6+ */
+   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(99%,rgba(178,178,178,1))); /* Chrome,Safari4+ */
+   background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(178,178,178,1) 99%); /* Chrome10+,Safari5.1+ */
+   background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(178,178,178,1) 99%); /* Opera 11.10+ */
+   background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(178,178,178,1) 99%); /* IE10+ */
+   background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(178,178,178,1) 99%); /* W3C */
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#b2b2b2',GradientType=0 ); /* IE6-9 */
+   padding: 20px 70px;
 
 }
 
@@ -200,10 +200,10 @@ tr, td {
 }
 
 .form-container {
-        width: 350px;
-        margin: auto;
-        font-size: 16px;
-      }
+   width: 350px;
+   margin: auto;
+   font-size: 16px;
+}
       
 form input {
    padding: 10px 5px;

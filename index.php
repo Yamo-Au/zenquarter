@@ -6,12 +6,7 @@
    </head>
    <body>
       <div class="wrapper">
-         <div class="header">
-            <img class="logo" alt="Yamo logo" src="images/logo.png" />
-         </div>
-         <div class="banner-area">
-            <img class="banner" src="images/banner.png" />
-         </div>
+         <?php include_once('includes/top.php'); ?>
          <div class="content">
             <div class="user-area">
             <h1 class="main-heading">Phone and NBN</h1>
@@ -92,9 +87,7 @@
             <img class="handsets" alt="Yamo cisco handsets" src="images/phones.png" />
             
          </div>
-         <div class="footer">
-            <span>Copyright &copy; 2014 Yamo Pty. Ltd. All Rights Reserved.</span>
-         </div>
+         <?php include_once('includes/footer.php'); ?>
       </div>
    </body>
 </html>
