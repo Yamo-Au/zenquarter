@@ -1,12 +1,10 @@
 <?php
-   
-   $NBN_MONTHLY_FEE = 100;
-   $NBN_ACTIVATION_FEE = 150;
+
+   $NBN_ACTIVATION_FEE = 100;
+   $PHONE_PLAN_COST = 45;
    
    $DISCOUNT_FACTOR = 0.9;
    
-   $planInput = $_POST['plan'];
-   $handsetInput = $_POST['handset'];
    $internetInput = $_POST['internet'];
    
    $firstName = $_POST['first'];
@@ -29,31 +27,6 @@
    # Email to sales
    $to = 'test@test.com.au';                             # change as desired
    mail($to, 'Customer interest - '.$email, $message);
-   
-   $c504 = [
-      'id'=>'504',
-      'cost'=>200
-   ];
-   $c514 = [
-      'id'=>'514',
-      'cost'=>275
-   ];
-   $c525G2 = [
-      'id'=>'525G2',
-      'cost'=>350
-   ];
-   $c302D = [
-      'id'=>'302D',
-      'cost'=>375
-   ];
-   
-   $handsets = [ $c504, $c514, $c525G2, $c302D ];
-   
-   $plans = [
-      'lite'=>20,
-      'max'=>35,
-      'complete'=>45
-   ];
    
    $internets = [
       '25/1Mbps'=>100,
@@ -92,40 +65,13 @@
       <div id="quote">
       <?php
       
-         $handsetCost = 0;
-         $planCost = 0;
          $internetCost = 0;
-         $planName = '';
          $internetName = '';
          
-         if (strcmp($planInput, 'none') != 0) $planRequired = true;
-         else $planRequired = false;
-         if (strcmp($handsetInput, 'none') != 0) $handsetRequired = true;
-         else $handsetRequired = false;
          if (strcmp($internetInput, 'none') != 0) $internetRequired = true;
          else $internetRequired = false;
          
-         # Determine the price of selected plan
-         if ($planRequired) {
-            foreach ($plans as $key=>$value) {
-               if(strcmp($key, $planInput) == 0) {
-                  $planCost = $value;
-                  $planName = $key;
-                  $planName = ucfirst($planName);
-               }
-            }
-         }
-         
-         # Determine the price of selected handset
-         if ($handsetRequired) {
-            foreach ($handsets as $handset) {
-               if (strcmp($handset['id'], $handsetInput) == 0) {
-                  $handsetCost = $handset['cost'];
-               }
-            }
-         }
-         
-         # Determine the price of seleced internet
+         # Determine the price of seleced nbn plan
          if ($internetRequired) {
             foreach ($internets as $key=>$value) {
                if(strcmp($key, $internetInput) == 0) {
@@ -137,20 +83,10 @@
          }
          
          echo '<div class="quote-box">';
-         echo '<h3>Plan</h3>';
+         echo '<h3>Phone</h3>';
          echo '<table class="quote-table">';
-         if ($planRequired) echo '<tr><td>Type:</td><td>'.$planName.'</td></tr>';
-         else echo '<tr><td>Plan:</td><td>None selected</td></tr>';
-         echo '<tr><td>Cost:</td><td>$'.$planCost.' / month</td></tr>';
-         echo '</table>';
-         echo '</div> ';
-         
-         echo '<div class="quote-box">';
-         echo '<h3>Handset</h3>';
-         echo '<table class="quote-table">';
-         if ($handsetRequired) echo '<tr><td>Model:</td><td>Cisco'.$handsetInput.'</td></tr>';
-         else echo '<tr><td>Model:</td><td>None selected</td></tr>';
-         echo '<tr><td>Cost:</td><td>$'.$handsetCost.'</td></tr>';
+         echo '<tr><td>Type:</td><td>Unlimited</td></tr>';
+         echo '<tr><td>Cost:</td><td>$'.$PHONE_PLAN_COST.' / month</td></tr>';
          echo '</table>';
          echo '</div> ';
          
@@ -171,13 +107,13 @@
          echo '</div> ';
          
          # Calculate total
-         $upfront = $handsetCost;
-         if ($internetRequired) $upfront += $NBN_ACTIVATION_FEE;
+         $upfront = 0;
+         if ($internetRequired) $upfront = $NBN_ACTIVATION_FEE;
          
-         $monthly = $planCost + $internetCost;
-         if ($internetRequired) $monthly += $NBN_MONTHLY_FEE;
+         $monthly = $PHONE_PLAN_COST;
+         if ($internetRequired) $monthly += $internetCost;
          
-         if ($planRequired && $internetRequired) {
+         if ($internetRequired) {
             $discount = true;
          } else {
             $discount = false;

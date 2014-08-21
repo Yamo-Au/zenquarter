@@ -9,7 +9,7 @@
          <?php include_once('includes/top.php'); ?>
          <div class="content">
             <div class="user-area">
-            <h1 class="main-heading">Phone and NBN</h1>
+            <h1 class="main-heading">Customer Details</h1>
             <div class="form-wrap">
             <form id="zenform" class="form" action="confirm.php" method="post" onsubmit="return checkForm();">
                <div class="form-container">
@@ -43,27 +43,6 @@
                     <input type="text" class="full required" name="phone" value="Phone number"/>
                   </p>
                   <p>
-                    <label class="desc" for="plan">Desired Plan</label><br />
-                    <select class="full" id="plan" name="plan">
-                      <option value="none">-- Select one --</option>
-                      <option value="lite">Lite - $20/month</option>
-                      <option value="max">Max - $35/month</option>
-                      <option value="complete">Complete - $45/month</option>
-                      <option value="none">Not required</option>
-                    </select>
-                  </p>
-                  <p>
-                    <label class="desc" for="handset">Desired Handset</label><br />
-                    <select class="full" id="handset" name="handset">
-                       <option value="none">-- Select one --</option>
-                       <option value="504">Cisco 504 - $200</option>
-                       <option value="514">Cisco 514 - $275</option>
-                       <option value="525G2">Cisco 525G2 - $350</option>
-                       <option value="302D">Cisco 302D - $375</option>
-                       <option value="none">Not required</option>
-                    </select>
-                  </p>
-                  <p>
                     <label class="desc" for="internet">NBN Internet Plan</label><br />
                     <select class="full" id="internet" name="internet">
                        <option value="none">-- Select one --</option>
@@ -83,8 +62,8 @@
             </div>
             
             </div>
-            <img class="business-voice" alt="Yamo Business Voice" src="images/business-voice.png" />
-            <img class="handsets" alt="Yamo cisco handsets" src="images/phones.png" />
+            <img class="voice" alt="Yamo Phone Plans" src="images/voice.png" />
+            <img class="nbn" alt="Yamo NBN plans" src="images/nbn.png" />
             
          </div>
          <?php include_once('includes/footer.php'); ?>

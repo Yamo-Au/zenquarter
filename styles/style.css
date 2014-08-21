@@ -33,7 +33,7 @@ body {
 
 .header {
    background-color: #fff;
-   padding: 15px;
+   padding: 15px; 
 }
 
 .banner {
@@ -42,9 +42,11 @@ body {
    margin: auto;
 }
 
-.business-voice {
+.voice, .nbn {
    margin: auto;
    display: block;
+   width: 100%;
+   margin-bottom: 10px;
 }
 
 .logo {
@@ -58,6 +60,23 @@ body {
 .main-heading {
    margin-top: 0px;
    text-align: center;
+   padding: 10px;
+   margin-top: -6px;
+   border-radius: 0 0 20px 20px;
+   color: #fff;
+   
+   background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      color-stop(0, #525252),
+      color-stop(1, #171717)
+   );
+   background-image: -o-linear-gradient(bottom, #525252 0%, #171717 100%);
+   background-image: -moz-linear-gradient(bottom, #525252 0%, #171717 100%);
+   background-image: -webkit-linear-gradient(bottom, #525252 0%, #171717 100%);
+   background-image: -ms-linear-gradient(bottom, #525252 0%, #171717 100%);
+   background-image: linear-gradient(to bottom, #525252 0%, #171717 100%);
 }
 
 .content {
@@ -70,6 +89,7 @@ body {
    background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(178,178,178,1) 99%); /* W3C */
    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#b2b2b2',GradientType=0 ); /* IE6-9 */
    padding: 20px 70px;
+   margin-top: -60px;
 
 }
 
@@ -93,7 +113,7 @@ body {
    -ms-text-justify: distribute-all-lines;
    text-justify: distribute-all-lines;
    background-color: #eee;
-   padding: 20px 10px;
+   padding: 20px 70px;
    margin-top: 15px;
    margin-bottom: 15px;
    box-shadow: 1px 1px 8px #5e5e5e;
@@ -238,9 +258,14 @@ form input, select {
    padding: 20px;
    overflow: auto;
    height: 365px;
+   margin-top: 20px;
 }
 
 .tnc h2 {
    font-size: 16px;
    text-align: left;
+}
+
+.head-image {
+   width: 100%;
 }
