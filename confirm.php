@@ -1,6 +1,12 @@
 <?php session_start(); ?>
 <?php
-
+   
+   # Zen Quarter address details
+   $ZEN_STREET = '6 Carey Street';
+   $ZEN_CITY = 'Darwin';
+   $ZEN_STATE = 'NT';
+   $ZEN_POSTCODE = '0800';
+   
    $NBN_ACTIVATION_FEE = 100;
    $PHONE_PLAN_COST = 45;
    
@@ -12,10 +18,10 @@
    $lastName = $_POST['last'];
    $email = $_POST['email'];
    $street1 = $_POST['street1'];
-   $street2 = $_POST['street2'];
-   $city = $_POST['city'];
-   $state = $_POST['state'];
-   $postcode = $_POST['postcode'];
+   $street2 = $ZEN_STREET;
+   $city = $ZEN_CITY;
+   $state = $ZEN_STATE;
+   $postcode = $ZEN_POSTCODE;
    $phone = $_POST['phone'];
    
    $_SESSION['firstname'] = $firstName;
@@ -58,8 +64,8 @@
          <table>
             <tr><td>Name:</td><td><?php echo $firstName.' '.$lastName ?></td></tr>
             <tr><td>Email:</td><td><?php echo $email ?></td></tr>
-            <tr><td>Street address line 1:</td><td><?php echo $street1 ?></td></tr>
-            <tr><td>Street address line 2:</td><td><?php echo $street2 ?></td></tr>
+            <tr><td>Unit number:</td><td><?php echo $street1 ?></td></tr>
+            <tr><td>Street address:</td><td><?php echo $street2 ?></td></tr>
             <tr><td>City:</td><td><?php echo $city ?></td></tr>
             <tr><td>State:</td><td><?php echo strtoupper($state) ?></td></tr>
             <tr><td>Postcode:</td><td><?php echo $postcode ?></td></tr>

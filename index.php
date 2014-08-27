@@ -23,24 +23,15 @@
                   </p>
                   <p>
                     <label class="desc">Email *</label><br />
-                    <input type="text" class="full required" name="email" value="Email address"/>
+                    <input type="email" class="full required" name="email" value="Email address" />
                   </p>
                   <p>
                     <label class="desc">Address *</label><br />
-                    <input type="text" class="full required" name="street1" value="Street address"/><br />
-                    <input type="text" class="full" name="street2" value="Street address line 2"/><br />
-                    <input type="text" class="half required" name="city" value="City / suburb"/>
-                    <select class="half required" name="state" id="state">
-                      <option value="none">State</option>
-                      <option value="nt">NT</option>
-                      <option value="wa">WA</option>
-                      <option value="nsw">NSW</option>
-                      <option value="act">ACT</option>
-                      <option value="qld">QLD</option>
-                      <option value="sa">SA</option>
-                      <option value="tas">TAS</option>
-                    </select>
-                    <input type="text" class="half required" name="postcode" value="Postcode"/>
+                    <input type="text" class="full required" name="street1" value="Unit number"/><br />
+                    <input type="text" class="full" name="street2" value="6 Carey Street" disabled /><br />
+                    <input type="text" class="half" name="city" value="Darwin" disabled />
+                    <input class="half" type="text" name="state" id="state" value="NT" disabled />
+                    <input type="text" class="half" name="postcode" value="0800" disabled />
                   </p>
                   <p>
                     <label class="desc">Phone</label><br />

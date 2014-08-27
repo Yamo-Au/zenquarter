@@ -1,10 +1,10 @@
 $(document).ready(function() {
 
    // Set color of all user input fields to gray
-   $('input:text').css('color','lightgray');
+   $('.required').css('color','lightgray');
    
    // Clear the field on focus
-   $('input:text').focus(function() {
+   $('.required').focus(function() {
       if (this.value == this.defaultValue) {
          this.value = '';
          this.style.color = 'black';
@@ -13,7 +13,7 @@ $(document).ready(function() {
    });
    
    // Repopulate when field loses focus
-   $('input:text').blur(function() {
+   $('.required').blur(function() {
       if ($.trim(this.value) == ''){
          this.value = (this.defaultValue ? this.defaultValue : '');
          this.style.color = 'lightgray';

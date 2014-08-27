@@ -6,14 +6,17 @@ if (isset($_POST['accept'])) {
    $message = 'Dear sales,\nA customer has expressed interest in our product. Please find details below.\n\n';
    $message .= 'Name:\t'.$_SESSION['firstname'].' '.$_SESSION['lastname'].'\n';
    $message .= 'Email:\t'.$_SESSION['email'].'\n';
-   $message .= 'Address:\t'.$_SESSION['street1'].' '.$_SESSION['street2'].', '.$_SESSION['city'].', '.$_SESSION['state'].' '.$_SESSION['postcode'].'\n';
+   $message .= 'Address:\t'.$_SESSION['street1'].'/'.$_SESSION['street2'].', '.$_SESSION['city'].', '.$_SESSION['state'].' '.$_SESSION['postcode'].'\n';
    $message .= 'Phone:\t'.$_SESSION['phone'];
    $message .= 'NBN Plan:\t'.$_SESSION['plan'];
    $message .= '\n\nThis is an automatically generated email.\n';
    
-   # Email to sales
-   $to = 'test@test.com.au';                             # change as desired
-   mail($to, 'Customer interest - '.$email, $message);
+   $from = "support@yamo.com.au";
+   $to = "mark@yamo.com.au";
+   $subject = "Zenquarter cutomer: ".$_SESSION['firstname'].' '.$_SESSION['lastname'];
+   $headers = "From:" . $from;
+   mail($to,$subject,$message, $headers);
+   echo "Test email sent";
    
    # Redirect user to form download page
    header('Location: downloads.php');
