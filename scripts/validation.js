@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
    // Set color of all user input fields to gray
    $('input:text').css('color','lightgray');
    
@@ -9,7 +10,6 @@ $(document).ready(function() {
          this.style.color = 'black';
          this.style.outline = 'none';
       }
-         
    });
    
    // Repopulate when field loses focus
@@ -22,24 +22,33 @@ $(document).ready(function() {
    
 });
 
+// Determines if errors are present in form. Blocks form submit if necessary.
 function checkForm() {
+
+   clearErrors();
    var error = false;
    $('.required').each(function() {
-      if (this.value === this.defaultValue) {
+      if (this.value === this.defaultValue || this.value == 'none') {
          this.style.outline = '3px solid red';
          error = true;
       }
-      
    });
+   
    if (error) {
-      alert('Errors present in the form. Please try again.');
       return false;
    }
    else {
-      $('#quote').css('display', 'block');
-      $("#quote").show(1000, function() {
-         return true;
-      });
-      
-   }   
+      return true;
+   }  
+   
+}
+
+// Removes red outline from all fields.
+function clearErrors() {
+
+   $('.required').each(function() {
+      this.style.outline = 'initial';
+      error = true;
+   });
+   
 }

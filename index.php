@@ -1,3 +1,6 @@
+<?php
+   
+?>
 <!doctype html>
 <html lang="en">
    <head>
@@ -5,6 +8,7 @@
       <?php include_once('includes/links.php'); ?>
    </head>
    <body>
+      <?php include_once('includes/js-hide.php'); ?>
       <div class="wrapper">
          <?php include_once('includes/top.php'); ?>
          <div class="content">
@@ -26,7 +30,7 @@
                     <input type="text" class="full required" name="street1" value="Street address"/><br />
                     <input type="text" class="full" name="street2" value="Street address line 2"/><br />
                     <input type="text" class="half required" name="city" value="City / suburb"/>
-                    <select class="half required" name="state">
+                    <select class="half required" name="state" id="state">
                       <option value="none">State</option>
                       <option value="nt">NT</option>
                       <option value="wa">WA</option>
@@ -60,11 +64,9 @@
                 </div>
             </form>
             </div>
-            
             </div>
             <img class="voice" alt="Yamo Phone Plans" src="images/voice.png" />
             <img class="nbn" alt="Yamo NBN plans" src="images/nbn.png" />
-            
          </div>
          <?php include_once('includes/footer.php'); ?>
       </div>

@@ -1,3 +1,4 @@
+<?php include_once('includes/prevent.php'); ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,6 +12,7 @@
    </script>
 </head>
 <body onload="$('#download-link').trigger('click');">
+<?php include_once('includes/js-hide.php'); ?>
 <div class="wrapper">
    <?php include_once('includes/top.php'); ?>
    <div class="content">

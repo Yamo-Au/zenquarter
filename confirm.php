@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php
 
    $NBN_ACTIVATION_FEE = 100;
@@ -17,16 +18,18 @@
    $postcode = $_POST['postcode'];
    $phone = $_POST['phone'];
    
-   # Build string to be emailed to sales
-   $message = 'Dear sales,\nA customer has expressed interest in our product. Please find details below.\n';
-   $message .= 'Name:\t'.$firstName.' '.$lastName.'\n';
-   $message .= 'Email:\t'.$email.'\n';
-   $message .= 'Address:\t'.$street1.' '.$street2.' '.$city.' '.$state.' '.$postcode.'\n';
-   $message .= 'Phone:\t'.$phone;
+   $_SESSION['firstname'] = $firstName;
+   $_SESSION['lastname'] = $lastName;
+   $_SESSION['email'] = $email;
+   $_SESSION['street1'] = $street1;
+   $_SESSION['street2'] = $street2;
+   $_SESSION['city'] = $city;
+   $_SESSION['state'] = $state;
+   $_SESSION['postcode'] = $postcode;
+   $_SESSION['phone'] = $phone;
+   $_SESSION['plan'] = $internetInput;
    
-   # Email to sales
-   $to = 'test@test.com.au';                             # change as desired
-   mail($to, 'Customer interest - '.$email, $message);
+   $_SESSION['id'] = $firstName;
    
    $internets = [
       '25/1Mbps'=>100,
@@ -45,6 +48,7 @@
    <?php include_once('includes/links.php') ?>
 </head>
 <body>
+<?php include_once('includes/js-hide.php'); ?>
 <div class="wrapper">
    <?php include_once('includes/top.php'); ?>
    <div class="content">
@@ -57,7 +61,7 @@
             <tr><td>Street address line 1:</td><td><?php echo $street1 ?></td></tr>
             <tr><td>Street address line 2:</td><td><?php echo $street2 ?></td></tr>
             <tr><td>City:</td><td><?php echo $city ?></td></tr>
-            <tr><td>State:</td><td><?php echo $state ?></td></tr>
+            <tr><td>State:</td><td><?php echo strtoupper($state) ?></td></tr>
             <tr><td>Postcode:</td><td><?php echo $postcode ?></td></tr>
             <tr><td>Phone number:</td><td><?php echo $phone ?></td></tr>
          </table>
@@ -71,7 +75,7 @@
          if (strcmp($internetInput, 'none') != 0) $internetRequired = true;
          else $internetRequired = false;
          
-         # Determine the price of seleced nbn plan
+         # Determine the price of seleced NBN plan
          if ($internetRequired) {
             foreach ($internets as $key=>$value) {
                if(strcmp($key, $internetInput) == 0) {
@@ -82,25 +86,27 @@
             }
          }
          
+         # Display quote for phone
          echo '<div class="quote-box">';
          echo '<h3>Phone</h3>';
          echo '<table class="quote-table">';
-         echo '<tr><td>Type:</td><td>Unlimited</td></tr>';
-         echo '<tr><td>Cost:</td><td>$'.$PHONE_PLAN_COST.' / month</td></tr>';
+         echo '<tr><td>Type:</td><td><b>Unlimited</b></td></tr>';
+         echo '<tr><td>Cost:</td><td><b>$'.$PHONE_PLAN_COST.' / month</b></td></tr>';
          echo '</table>';
          echo '</div> ';
          
+         # Display quote for NBN
          echo '<div class="quote-box">';
             echo '<h3>Internet</h3>';
             echo '<table class="quote-table">';
             if ($internetRequired) {
-               echo '<tr><td>Plan:</td><td>'.$internetName.'</td></tr>';
-               echo '<tr><td>Cost:</td><td>$'.$internetCost.' / month</td></tr>';
-               echo '<tr><td>Activation:</td><td>$'.$NBN_ACTIVATION_FEE.'</td></tr>';
+               echo '<tr><td>Plan:</td><td><b>'.$internetName.'</b></td></tr>';
+               echo '<tr><td>Cost:</td><td><b>$'.number_format($internetCost, 2, '.', '').' / month</b></td></tr>';
+               echo '<tr><td>Activation:</td><td><b>$'.number_format($NBN_ACTIVATION_FEE, 2, '.', '').'</b></td></tr>';
             } else {
-               echo '<tr><td>Plan:</td><td>Not required</td></tr>';
-               echo '<tr><td>Cost:</td><td>$'.$internetCost.' / month</td></tr>';
-               echo '<tr><td>Activation:</td><td>$0</td></tr>';
+               echo '<tr><td>Plan:</td><td><b>Not required</b></td></tr>';
+               echo '<tr><td>Cost:</td><td><b>$'.number_format($internetCost, 2, '.', '').' / month</b></td></tr>';
+               echo '<tr><td>Activation:</td><td><b>$0</b></td></tr>';
             }
             echo '</table>';
          
@@ -123,17 +129,20 @@
             $monthly = $monthly * $DISCOUNT_FACTOR;
          }
          
+         # Display the total
          echo '<div class="quote-box">';
          echo '<h3>Total</h3>';
          echo '<table class="quote-table">';
-         echo '<tr><td>Upfront:</td><td>$'.$upfront.'</td></tr>';
-         echo '<tr><td>Monthly:</td><td>$'.$monthly.'</td>';
+         echo '<tr><td>Upfront:</td><td><b>$'.number_format($upfront, 2, '.', '').'</b></td></tr>';
+         echo '<tr><td>Monthly:</td><td><b>$'.number_format($monthly, 2, '.', '').'</b></td>';
+         if ($discount) echo '<tr><td>Monthly discount:</td><td><b>10%</b></td></tr>';
          echo '</tr>';
          echo '</table>';
          echo '</div> ';
 
          echo '<span class="stretch"></span>';
-         echo '<button class="quote-button" id="continue">Continue &#187;</button> ';
+         # Button is wrapped in form in case JavaScript is disabled
+         echo '<form action="terms.php"><button type="submit" class="quote-button" id="continue">Continue &#187;</button></form> ';
          echo '<script>$(".quote").show(1000);</script>';
          
       ?>
@@ -142,8 +151,7 @@
          $('#continue').click(function() {
             location.href = 'terms.php';
          });
-      </script>
-      
+      </script> 
    </div>
    <?php include_once('includes/footer.php'); ?>
 </div>

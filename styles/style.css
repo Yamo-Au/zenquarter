@@ -9,7 +9,7 @@ body {
    background-color: #eee;
    box-shadow: 1px 1px 8px #888888;
    border-radius: 20px;
-   
+   display: none;
 }
 
 .contact-area {
@@ -268,4 +268,8 @@ form input, select {
 
 .head-image {
    width: 100%;
+}
+
+.js-disabled p {
+   text-align: center;
 }
