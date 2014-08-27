@@ -1,0 +1,13 @@
+[27-Aug-2014 18:42:45 Australia/Melbourne] PHP Parse error:  syntax error, unexpected '[' in /home/wamo/public_html/customers/zenquarter/confirm.php on line 40
+[27-Aug-2014 18:42:54 Australia/Melbourne] PHP Parse error:  syntax error, unexpected '[' in /home/wamo/public_html/customers/zenquarter/confirm.php on line 40
+[27-Aug-2014 18:43:28 Australia/Melbourne] PHP Parse error:  syntax error, unexpected '[' in /home/wamo/public_html/customers/zenquarter/confirm.php on line 40
+[27-Aug-2014 18:44:03 Australia/Melbourne] PHP Parse error:  syntax error, unexpected '[' in /home/wamo/public_html/customers/zenquarter/confirm.php on line 40
+[27-Aug-2014 18:51:51 Australia/Melbourne] PHP Parse error:  syntax error, unexpected '[' in /home/wamo/public_html/customers/zenquarter/confirm.php on line 40
+[27-Aug-2014 18:54:04 Australia/Melbourne] PHP Parse error:  syntax error, unexpected T_DOUBLE_ARROW in /home/wamo/public_html/customers/zenquarter/confirm.php on line 41
+[27-Aug-2014 18:55:30 Australia/Melbourne] PHP Parse error:  syntax error, unexpected T_DOUBLE_ARROW in /home/wamo/public_html/customers/zenquarter/confirm.php on line 41
+[27-Aug-2014 18:56:23 Australia/Melbourne] PHP Notice:  Undefined index: internet in /home/wamo/public_html/customers/zenquarter/confirm.php on line 15
+[27-Aug-2014 18:56:23 Australia/Melbourne] PHP Notice:  Undefined index: first in /home/wamo/public_html/customers/zenquarter/confirm.php on line 17
+[27-Aug-2014 18:56:23 Australia/Melbourne] PHP Notice:  Undefined index: last in /home/wamo/public_html/customers/zenquarter/confirm.php on line 18
+[27-Aug-2014 18:56:23 Australia/Melbourne] PHP Notice:  Undefined index: email in /home/wamo/public_html/customers/zenquarter/confirm.php on line 19
+[27-Aug-2014 18:56:23 Australia/Melbourne] PHP Notice:  Undefined index: street1 in /home/wamo/public_html/customers/zenquarter/confirm.php on line 20
+[27-Aug-2014 18:56:23 Australia/Melbourne] PHP Notice:  Undefined index: phone in /home/wamo/public_html/customers/zenquarter/confirm.php on line 25

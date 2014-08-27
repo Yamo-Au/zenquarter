@@ -3,13 +3,13 @@
    
 if (isset($_POST['accept'])) {
    # Build string to be emailed to sales
-   $message = 'Dear sales,\nA customer has expressed interest in our product. Please find details below.\n\n';
-   $message .= 'Name:\t'.$_SESSION['firstname'].' '.$_SESSION['lastname'].'\n';
-   $message .= 'Email:\t'.$_SESSION['email'].'\n';
-   $message .= 'Address:\t'.$_SESSION['street1'].'/'.$_SESSION['street2'].', '.$_SESSION['city'].', '.$_SESSION['state'].' '.$_SESSION['postcode'].'\n';
-   $message .= 'Phone:\t'.$_SESSION['phone'];
-   $message .= 'NBN Plan:\t'.$_SESSION['plan'];
-   $message .= '\n\nThis is an automatically generated email.\n';
+   $message = "Dear sales,\r\nA customer has expressed interest in our product. Please find details below.\r\n\r\n";
+   $message .= "Name: ".$_SESSION["firstname"]." ".$_SESSION["lastname"]."\r\n";
+   $message .= "Email: ".$_SESSION["email"]."\r\n";
+   $message .= "Address: ".$_SESSION["street1"]."/".$_SESSION["street2"].", ".$_SESSION["city"].", ".$_SESSION["state"]." ".$_SESSION["postcode"]."\r\n";
+   $message .= "Phone: ".$_SESSION["phone"]."\r\n";
+   $message .= "NBN Plan: ".$_SESSION["plan"]."\r\n";
+   $message .= "\r\nThis is an automatically generated email.\r\n";
    
    $from = "support@yamo.com.au";
    $to = "mark@yamo.com.au";

@@ -37,13 +37,13 @@
    
    $_SESSION['id'] = $firstName;
    
-   $internets = [
-      '25/1Mbps'=>100,
-      '25/5Mbps'=>110,
-      '25/10Mbps'=>120,
-      '50/20Mbps'=>130,
-      '100/40Mbps'=>140
-   ];
+   $internets = array(
+      '25/1Mbps' => 100,
+      '25/5Mbps' => 110,
+      '25/10Mbps' => 120,
+      '50/20Mbps' => 130,
+      '100/40Mbps' => 140
+   );
    
 ?>
 
